@@ -32,7 +32,7 @@ public class JsonResultFormat<data> implements Serializable {
     @ApiModelProperty(name = "innerno",value = "6",required = true,example = "6")
     private String innerno;
     @ApiModelProperty(name = "money",value = "1000",required = true,example = "1000")
-    private BigDecimal trademoney;
+    private BigDecimal Trademoney;
     public JsonResultFormat(){
 
     }
