@@ -166,7 +166,8 @@ if you type the wrong param the json feedback below:
   "trademoney": 10
 }
 ```
-`````{
+`````
+{
        "code": 402,
        "msg": "Transaction failed, please confirm that the collection information is correct before submitting!",
        "data": {},
