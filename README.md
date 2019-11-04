@@ -30,7 +30,7 @@ With the ExceptionInterceptor the try catch method don't need anymore.
 ### Technology selection
 ###
 ````
-Springboot+mybatis+maven+lombok+fastjson+swagger2+hibernate-validator
+Springboot+mybatis+maven+lombok+fastjson+swagger2+hibernate-validator+jdk1.8
 ````
 
 Project framework
