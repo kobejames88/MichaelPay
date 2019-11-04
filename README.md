@@ -160,10 +160,24 @@ if you type the right param the feedback json is :
 
 if also can tranfer money from english name account to chinese name account
 
-``
+````
+{
+  "code": 200,
+  "msg": "Transfer succeeded!",
+  "data": {
+    "张三": 22552.36,
+    "outMoney": 14035.8,
+    "jack": 14035.8,
+    "inMoney": 22552.36
+  },
+  "outer": "jack",
+  "outerno": "300123",
+  "inner": "张三",
+  "innerno": "600123",
+  "trademoney": 10
+}
 
-
-``
+````
 if you type the wrong param the json feedback below:
 ```
 {
@@ -236,7 +250,7 @@ Cancel the  Notes of int i=1/0 in TradeServiceImpl;
     public void tradeMoney(BigDecimal money,String outer, String outerNo,String inner,String innerNo) {
         moneyTradeMapper.out(money,outer, outerNo);
         //Power failure test
-        //int i = 1/0;
+        int i = 1/0;
         moneyTradeMapper.in( money,inner,innerNo);
     }
 }
