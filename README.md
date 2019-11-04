@@ -64,9 +64,10 @@ You must type the param userName and userNo follow below:
 example:
 
 ``````````
-username:jack
-
+{
+username:jack,
 userNo：300123
+}
 
 ``````````
 Type the param into swagger follow below：
@@ -107,13 +108,16 @@ if you type the wrong param the feelback json is :
 I also use the Hibernate validator and ExceptionInterceptor to validated the param
 if you type the param illegal, 
 ```
+{
 userName："#!@#!2",
-userNo:""1232131",
+userNo:""1232131"
+}
 ```
 
 the json feekback is:
 ```
-{"code":1,"
+{
+"code":1,"
 data":{},
 "msg":"queryMoney.userNo: User number must be 6 digits,
  queryMoney.userName: Account must be in English or Chinese"
@@ -176,7 +180,8 @@ if you type the wrong param the json feedback below:
        "inner": "suns",
        "innerno": "300124",
        "trademoney": 10
-     }
+       
+  }
 `````
 
 ``````
@@ -211,7 +216,8 @@ data":{},
  transMoney.strMoney: The entered amount rule is illegal. The amount must be an integer greater than zero or two decimal places greater than zero, 
  transMoney.outer: Transfer account must be in English letters or Chinese characters,
   transMoney.outerNo: Transfer account number must be 6 digits, 
-  transMoney.inner: Collection account is in English or Chinese"}
+  transMoney.inner: Collection account is in English or Chinese"
+  }
 ````
 if I simulate the transfer exception,the ExceptionHandler can catch the exception from the backend to the frontend,
 and the data will not be change.
