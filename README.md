@@ -28,11 +28,13 @@ Hibernate validator and ExceptionInterceptor is used as the validation of the in
 With the ExceptionInterceptor the try catch method don't need anymore.
 
 ### Technology selection
+###
 ````
 Springboot+mybatis+maven+lombok+fastjson+swagger2+hibernate-validator
 ````
 
-##Project framework
+#Project framework
+#
 ```
 MichaelPay
 ├── config 
@@ -42,7 +44,8 @@ MichaelPay
 ├── service 
 ```
 
-###How to Use 
+#How to Use 
+#
 ***
 git clone https://github.com/kobejames88/MichaelPay.git
 
@@ -54,7 +57,7 @@ Then you can start the project with idea.Run the url
 
 There are two RestApi is the Swagger.
 
-###The first is Check the banlence in real time.
+The first is Check the banlence in real time.
 
 You must type the param userName and userNo follow below: 
 
@@ -103,8 +106,11 @@ if you type the wrong param the feelback json is :
 
 I also use the Hibernate validator and ExceptionInterceptor to validated the param
 if you type the param illegal, 
+```
 userName："#!@#!2",
 userNo:""1232131",
+```
+
 the json feekback is:
 ```
 {"code":1,"
@@ -114,7 +120,7 @@ data":{},
 }
 ```
 
-###The Second is tranfer the money with Transaction validation.
+The Second is tranfer the money with Transaction validation.
 
 Type the param into swagger follow below：
 ```
