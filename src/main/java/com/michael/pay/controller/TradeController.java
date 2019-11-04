@@ -31,16 +31,16 @@ public class TradeController {
     private MoneyTradeMapper moneyTradeMapper;
 
     /**
-     * 查询余额
+     * Check the balance
      */
-    @ApiOperation(value = "查询转账余额", notes = "查询余额")
+    @ApiOperation(value = "Query transfer balance", notes = "Check the balance")
     @RequestMapping(value = "/queryMoney", method = RequestMethod.POST)
 
-    public JsonResultCom queryMoney(@RequestParam(value = "userName") @Pattern(regexp = "^[\\u4e00-\\u9fa5a-zA-Z]+$", message = "转账户必须为英文字母或汉字") String userName, @RequestParam(value = "userNo") @Pattern(regexp = "^\\d{6}$", message = "用户编号必须为6位纯数字") String userNo) {
-        JsonResultCom result = new JsonResultCom();
+    public JsonResultCom queryMoney(@RequestParam(value = "userName") @Pattern(regexp = "^[\\u4e00-\\u9fa5a-zA-Z]+$", message = "Account must be in English or Chinese") String userName, @RequestParam(value = "userNo") @Pattern(regexp = "^\\d{6}$", message = "User number must be 6 digits") String userNo) {
+        JsonResultCom result = new JsonResultCom();//Format return data
         Map<String, Object> data = new HashMap<>();
      try {
-            List<Money> userList = moneyTradeMapper.findMoneyListAND(userName, userNo);
+         List<Money> userList = moneyTradeMapper.findMoneyListAND(userName, userNo);
 
         if (userList.size()==0){
             data.put("status",403);
@@ -72,9 +72,7 @@ public class TradeController {
     /**
      * 金额转账
      * /**
-     * 用于测试
-     *
-     * @param @RequestParam类型的参数需要在Controller上增加@Validated
+     * @param
      * @return
      */
     @ApiOperation(value = "Pay", notes = "Pay")

@@ -18,9 +18,9 @@ public class JsonResultCom {
     private String msg; //消息提示
     @ApiModelProperty(hidden = true)
     private Map<String, Object> data; //返回的数据
-    @ApiModelProperty(name = "userName",value = "{}",required = true,example = "jack")
+    @ApiModelProperty(name = "userName",value = "{jack,sun,marin,mary，levis，bean,kris,anderson,michael,jack,张三,李四}",required = true,example = "{jack,sun,marin,mary，levis，bean,kris,anderson,michael,jack,张三,李四}")
     private String userName;
-    @ApiModelProperty(name = "userNo",value = "{}",required = true,example = "132213")
+    @ApiModelProperty(name = "userNo",value = "{300123,300124,300125,300126,300127,300128,300129,300130,300131,300132,600123,600124}",required = true,example = "{300123,300124,300125,300126,300127,300128,300129,300130,300131,300132,600123,600124}")
     private String userNo;
 
     private BigDecimal money;

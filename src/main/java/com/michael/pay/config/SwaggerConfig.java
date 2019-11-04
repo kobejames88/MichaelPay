@@ -27,8 +27,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("转账事务与查询查询")
-                .description("使用RestFul风格, 创建人：MichaelOu")
+                .title("Inquiry amount and transaction management transfer")
+                .description("Use restful style, Founder：MichaelOu")
                 .termsOfServiceUrl("https://github.com/")
                 .version("version 1.0")
                 .build();
