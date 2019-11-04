@@ -1,6 +1,5 @@
-### Project introduction
-***
-````
+# Project introduction
+
 Use restapi format
 
 {
@@ -24,7 +23,7 @@ Fastjson is the format returned by JSON,
 
 Swagger2 is the test case of the interface,
 
-Hibernate validator is used as the validation of the incoming parameter.
+Hibernate validator is used as the validation of the incoming parameter
 
 ### Technology selection
 ````
