@@ -7,18 +7,15 @@ import java.math.BigDecimal;
 public interface TradeService {
 //
 //    /**
-//     * 转账交易：没有事务管理
+//     * Transfer transaction: no transaction management
 //     */
 //    void trade1(String outer, String inner, BigDecimal money);
 //    /**
-//     * 转账交易：手动管理事务
+//     * Transfer transaction: manual transaction management
 //     */
 //    void trade2(String outer, String inner, BigDecimal money);
     /**
-     * 转账交易：注解管理事务
-     */
-    /**
-     * 查询余额
+     * Transfer transaction: notes management
      */
     void tradeMoney( BigDecimal money,String outer, String outerNo, String inner, String innerNo);
 }

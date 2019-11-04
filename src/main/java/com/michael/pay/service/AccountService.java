@@ -9,16 +9,16 @@ import java.util.Map;
 
 public interface AccountService {
     /**
-     * 汇款
+     * Remittance
      */
     void out(String outer, String outerNo, BigDecimal money);
     /**
-     * 收款
+     * Receivables
      */
     void in(String inner, String interNo, BigDecimal money);
 
     /**
-     * 查询余额
+     * Check the balance
      */
     List<Map<String, Object>> MoneyList();
 

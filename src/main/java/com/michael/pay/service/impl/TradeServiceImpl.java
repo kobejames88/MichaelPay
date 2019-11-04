@@ -44,8 +44,8 @@ public class TradeServiceImpl implements TradeService {
     @Override
     public void tradeMoney(BigDecimal money,String outer, String outerNo,String inner,String innerNo) {
         moneyTradeMapper.out(money,outer, outerNo);
-        // 断电测试
-        //int i = 1/0;
+        //Power failure test
+        int i = 1/0;
         moneyTradeMapper.in( money,inner,innerNo);
     }
 }

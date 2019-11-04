@@ -17,7 +17,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
 
 /**
- * Druid数据库连接池配置文件
+ * Druid database connection pool profile
  */
 @Configuration
 public class DruidConfig {
@@ -63,9 +63,9 @@ public class DruidConfig {
     private String connectionProperties;
 
     /**
-     * Druid 连接池配置
+     * Druid connection pool configuration
      */
-    @Bean     //声明其为Bean实例
+    @Bean     //Declare it as a bean instance
     public DruidDataSource dataSource() {
         DruidDataSource datasource = new DruidDataSource();
         datasource.setUrl(dbUrl);
@@ -95,58 +95,58 @@ public class DruidConfig {
     }
 
     /**
-     * JDBC操作配置
+     * JDBC operation configuration
      */
     @Bean(name = "jdbcTemplate")
     public JdbcTemplate jdbcTemplate (@Autowired DruidDataSource dataSource){
-        LOGGER.info("【jdbcTemplate 初始化...】");
+        LOGGER.info("【jdbcTemplate Initialization...】");
         return new JdbcTemplate(dataSource) ;
     }
 
     /**
-     * 事物管理器
+     * Things Manager
      */
     @Bean(name = "transactionManager")
     public PlatformTransactionManager transactionManager (DruidDataSource dataSource){
-        LOGGER.info("【transactionManager 初始化...】");
+        LOGGER.info("【transactionManager Initialization...】");
         DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
         transactionManager.setDataSource(dataSource);
         return transactionManager;
     }
 
     /**
-     * 创建事物手动管理模板
+     * Create a manual management template for things
      */
     @Bean(name = "transactionTemplate")
     public TransactionTemplate transactionTemplate(PlatformTransactionManager transactionManager) {
-        LOGGER.info("【transactionTemplate 初始化...】");
+        LOGGER.info("【transactionTemplate Initialization...】");
         TransactionTemplate transactionTemplate = new TransactionTemplate() ;
         transactionTemplate.setTransactionManager(transactionManager);
         return transactionTemplate;
     }
 
     /**
-     * 配置 Druid 监控界面
+     * Configure Druid monitoring interface
      */
     @Bean
     public ServletRegistrationBean statViewServlet(){
         ServletRegistrationBean srb =
                 new ServletRegistrationBean(new StatViewServlet(),"/druid/*");
-        //设置控制台管理用户
+        //Set up console administration users
         srb.addInitParameter("loginUsername","root");
         srb.addInitParameter("loginPassword","root");
-        //是否可以重置数据
+        //Can data be reset
         srb.addInitParameter("resetEnable","false");
         return srb;
     }
     @Bean
     public FilterRegistrationBean statFilter(){
-        //创建过滤器
+        //Create filter
         FilterRegistrationBean frb =
                 new FilterRegistrationBean(new WebStatFilter());
-        //设置过滤器过滤路径
+        //Set filter filter path
         frb.addUrlPatterns("/*");
-        //忽略过滤的形式
+        //Ignore the form of filtering
         frb.addInitParameter("exclusions",
                 "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
         return frb;

@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 
 
-@ApiModel(value="转账对象",description="转账对象说明")
+@ApiModel(value="transfer model",description="transfer model")
 public class JsonResult  {
     @ApiModelProperty(name = "outer",value = "jack or rose",required = true,example = "jack")
     private String outer;
@@ -19,7 +19,7 @@ public class JsonResult  {
     @ApiModelProperty(hidden = true)
     private Object result ;
 
-    private int code;   //返回码 非0即失败
+    private int code;   //return code
 
     public String getStatus() {
         return status;

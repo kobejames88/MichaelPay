@@ -1,13 +1,13 @@
-# 端口
+# Port
 server:
   port: 8080
 
-  logging:
-      config: classpath:log4j2-boot-dev.xml
+  #logging:
+      #config: classpath:log4j2-boot-dev.xml
 
 spring:
   application:
-    # 应用名称
+    # apply name
     name: michael-ou-transaction
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -31,16 +31,16 @@ spring:
       test-on-return: false
       test-while-idle: true
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-      #filters: #配置多个英文逗号分隔(统计，sql注入，log4j过滤)
+      #filters: #Configure multiple English comma separated (statistics, SQL injection, log4j filtering)
       filters: stat,wall
       stat-view-servlet:
         enabled: true
         url-pattern: /druid/*
-mybatis:
-  # mybatis配置文件所在路径
+#mybatis:
+  # mybatis Path of configuration file
   #config-location: classpath:mybatis.cfg.xml
-  type-aliases-package: com.michael.pay.service
-  # mapper映射文件
+  #type-aliases-package: com.michael.pay.service
+  # mapper Mapping file
   #mapper-locations: classpath:mapper/*.xml
 
 

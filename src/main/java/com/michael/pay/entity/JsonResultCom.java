@@ -13,16 +13,16 @@ import java.util.Map;
 @ApiModel(value="check account",description="check account")
 public class JsonResultCom {
     @ApiModelProperty(hidden = true)
-    private int code;   //返回码 非0即失败
+    private int code;   //return code
     @ApiModelProperty(hidden = true)
-    private String msg; //消息提示
+    private String msg; //Message hint
     @ApiModelProperty(hidden = true)
-    private Map<String, Object> data; //返回的数据
+    private Map<String, Object> data; //Data returned
     @ApiModelProperty(name = "userName",value = "{jack,sun,marin,mary，levis，bean,kris,anderson,michael,jack,张三,李四}",required = true,example = "{jack,sun,marin,mary，levis，bean,kris,anderson,michael,jack,张三,李四}")
     private String userName;
     @ApiModelProperty(name = "userNo",value = "{300123,300124,300125,300126,300127,300128,300129,300130,300131,300132,600123,600124}",required = true,example = "{300123,300124,300125,300126,300127,300128,300129,300130,300131,300132,600123,600124}")
     private String userNo;
-
+    @ApiModelProperty(hidden = true)
     private BigDecimal money;
     public JsonResultCom(){
 

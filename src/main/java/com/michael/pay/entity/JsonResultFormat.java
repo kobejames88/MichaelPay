@@ -14,22 +14,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 @ToString
-@ApiModel(value="转账对象",description="转账对象说明")
+@ApiModel(value="Transfer business",description="Transfer business")
 @Data
 public class JsonResultFormat<data> implements Serializable {
     @ApiModelProperty(hidden = true)
-    private int code;   //返回码 非0即失败
+    private int code;   //return code
     @ApiModelProperty(hidden = true)
-    private String msg; //消息提示
+    private String msg; //Message hint
     @ApiModelProperty(hidden = true)
-    private Map<String, Object> data; //返回的数据
-    @ApiModelProperty(name = "outer",value = "jack or rose",required = true,example = "jack")
+    private Map<String, Object> data; //return data
+    @ApiModelProperty(name = "outer",value = "{jack,sun,marin,mary，levis，bean,kris,anderson,michael,jack,张三,李四}",required = true,example = "{jack,sun,marin,mary，levis，bean,kris,anderson,michael,jack,张三,李四}")
     private String outer;
-    @ApiModelProperty(name = "outerno",value = "jack or rose",required = true,example = "6")
+    @ApiModelProperty(name = "outerno",value = "{300123,300124,300125,300126,300127,300128,300129,300130,300131,300132,600123,600124}",required = true,example = "{300123,300124,300125,300126,300127,300128,300129,300130,300131,300132,600123,600124}")
     private String outerno;
-    @ApiModelProperty(name = "inner",value = "jack or rose ",required = true,example = "rose")
+    @ApiModelProperty(name = "inner",value = "{jack,sun,marin,mary，levis，bean,kris,anderson,michael,jack,张三,李四} ",required = true,example = "{jack,sun,marin,mary，levis，bean,kris,anderson,michael,jack,张三,李四}")
     private String inner;
-    @ApiModelProperty(name = "innerno",value = "6",required = true,example = "6")
+    @ApiModelProperty(name = "innerno",value = "{300123,300124,300125,300126,300127,300128,300129,300130,300131,300132,600123,600124}",required = true,example = "{300123,300124,300125,300126,300127,300128,300129,300130,300131,300132,600123,600124}")
     private String innerno;
     @ApiModelProperty(name = "money",value = "1000",required = true,example = "1000")
     private BigDecimal Trademoney;

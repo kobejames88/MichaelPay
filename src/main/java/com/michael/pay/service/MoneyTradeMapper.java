@@ -14,27 +14,31 @@ import java.util.Map;
 @Mapper
 @Repository
 public interface MoneyTradeMapper {
+
     @Select("SELECT username,userNo,money FROM account WHERE username=#{username} AND userNo=#{userNo}")
     List<Money> findMoneyListAND(@Param("username")String username, @Param("userNo")String userNo);
     @Select("SELECT money FROM account WHERE username=#{userAny} OR userNo=#{userAny}")
+
     List<BigDecimal> findMoneyListOr(@Param("userAny")String userAny);
     @Select("SELECT money FROM account  WHERE username=#{username} AND userNo=#{userNo}")
+
      List<BigDecimal> findMoneAND(@Param("username")String username, @Param("userNo")String userNo);
     @Select("SELECT username,userNo,money FROM account WHERE username=#{userAny} OR userNo=#{userAny}")
     Money findMoneyOr(@Param("userAny")String userAny);
     /**
-     * 汇款
+     * Remittance
      */
     @Update("update account set money = money - #{money} where username = #{outer} and userNo = #{outerNo}")
     void out(@Param("money")BigDecimal money,@Param("outer")String outer, @Param("outerNo")String outerNo);
     /**
-     * 收款
+     * Receivables
      */
     @Update("update account set money = money + #{money} where username = #{inner} and userNo = #{interNo} ")
     void in( @Param("money")BigDecimal money,@Param("inner")String inner, @Param("interNo")String interNo);
 
     /**
-     * 查询余额
+     *
+     * Check the balance
      */
     @Select("SELECT username,userNo,money FROM account")
     List<Money> MoneyList();
