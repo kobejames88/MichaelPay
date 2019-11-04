@@ -157,6 +157,13 @@ if you type the right param the feedback json is :
   "trademoney": 10
 }
 ````````
+
+if also can tranfer money from english name account to chinese name account
+
+``
+
+
+``
 if you type the wrong param the json feedback below:
 ```
 {
@@ -221,6 +228,21 @@ data":{},
 ````
 if I simulate the transfer exception,the ExceptionHandler can catch the exception from the backend to the frontend,
 and the data will not be change.
+
+Cancel the  Notes of int i=1/0 in TradeServiceImpl;
+```
+ @Transactional(value="transactionManager",propagation= Propagation.REQUIRED)
+    @Override
+    public void tradeMoney(BigDecimal money,String outer, String outerNo,String inner,String innerNo) {
+        moneyTradeMapper.out(money,outer, outerNo);
+        //Power failure test
+        //int i = 1/0;
+        moneyTradeMapper.in( money,inner,innerNo);
+    }
+}
+
+```
+
 `````````
 {"code":13,
 "data":{},

@@ -45,7 +45,7 @@ public class TradeServiceImpl implements TradeService {
     public void tradeMoney(BigDecimal money,String outer, String outerNo,String inner,String innerNo) {
         moneyTradeMapper.out(money,outer, outerNo);
         //Power failure test
-        int i = 1/0;
+        //int i = 1/0;
         moneyTradeMapper.in( money,inner,innerNo);
     }
 }
